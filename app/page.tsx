@@ -4,13 +4,11 @@
 导入 { 动画, AnimatePresence } 从 'framer-motion'
 导入 { 火花, 月亮, 闪电, 箭头右, 分享2, 锁 } 来自 'lucide-react'
 导入 { 能源测试问题 } 来自 '@/lib/ai'
-
-// -ZCY--0116-- 只需要修改这里 ---
 常量 MY_WECHAT = "ZCY--0116" // 改成你真实的微信号
 // ----------------------
 
 导出 默认 函数主页() {
-  const [step, setStep] = useState<'landing' | 'test' | 'result'>('landing')
+  const [step, setStep] = useState<'登陆' | '测试' | '结果'>('登陆')
   常量 [当前问题, 设置当前问题] = 使用状态(0)
   常量 [答案, 设置答案] = 使用状态<字符串[]>([])
   常量 [加载中, 设置加载中] = .useState(假)
