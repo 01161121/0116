@@ -1,39 +1,39 @@
-'use client'
+'使用客户端'
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Sparkles, Moon, Zap, ArrowRight, Share2, Lock } from 'lucide-react'
-import { ENERGY_TEST_QUESTIONS } from '@/lib/ai'
+导入 { useState } 从 'react'
+导入 { 动画, AnimatePresence } 从 'framer-motion'
+导入 { 火花, 月亮, 闪电, 箭头右, 分享2, 锁 } 来自 'lucide-react'
+导入 { 能源测试问题 } 来自 '@/lib/ai'
 
 // -ZCY--0116-- 只需要修改这里 ---
-const MY_WECHAT = "ZCY--0116" // 改成你真实的微信号
+常量 MY_WECHAT = "ZCY--0116" // 改成你真实的微信号
 // ----------------------
 
-export default function Home() {
-  const [step, setStep] = useState<'landing' | 'test' | 'result'>('landing')
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [answers, setAnswers] = useState<string[]>([])
-  const [loading, setLoading] = useState(false)
-  const [result, setResult] = useState<any>(null)
+导出 默认 函数 主页() {
+  const [step, setStep] = useState<'登陆' | '测试' | '结果'>('登陆')
+  常量 [当前问题, 设置当前问题] = 使用状态(0)
+  常量 [答案, 设置答案] = 使用状态<字符串[]>([])
+  常量 [加载中, 设置加载中] = .useState(假)
+  常量 [结果, 设置结果] = useState<any>(空)
 
-  const handleStart = () => setStep('test')
+  常量 处理开始 = () => 设置步骤('测试')
 
-  const handleAnswer = (value: string) => {
-    const newAnswers = [...answers, value]
-    setAnswers(newAnswers)
+  常量 处理答案 = (值: 字符串) => {
+    常量 新答案 = [...答案, 值]
+    设置答案(新答案)
     
-    if (currentQuestion < ENERGY_TEST_QUESTIONS.length - 1) {
-      setCurrentQuestion(currentQuestion + 1)
-    } else {
-      generateResult(newAnswers)
+    如果 (当前问题 < 能量测试问题.长度 - 1) {
+      setCurrentQuestion(当前问题 + 1)
+    } 否则 {
+      生成结果(新答案)
     }
   }
 
-  const generateResult = async (finalAnswers: string[]) => {
-    setLoading(true)
+  常量 生成结果 = 异步 (最终答案: 字符串[]) => {
+    设置加载(真)
     // 模拟生成结果
     setTimeout(() => {
-      setResult({
+      设置结果({
         energy: Math.floor(Math.random() * 40 + 60),
         tag: finalAnswers.includes('water') ? '流动的忧郁' : '高频震荡者',
         desc: "你的系统正在经历一场无声的重构。目前的能量频率显示，你正处于某种进化的边缘。",
