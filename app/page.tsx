@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, Moon, Zap, ArrowRight, Share2, Lock } from 'lucide-react'
 import { ENERGY_TEST_QUESTIONS } from '@/lib/ai'
-// -ZCY--0116-- 只需要修改这里 ---
 const MY_WECHAT = "ZCY--0116" // 改成你真实的微信号
 // ----------------------
 
